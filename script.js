@@ -1,33 +1,19 @@
-//your JS code here. If required.
-// Get the container element
-const container = document.querySelector('.container');
+const board = document.getElementById("board");
+const squares = 800; // Total squares
+const colors = ["#FF5733", "#33FF57", "#3357FF", "#F39C12", "#8E44AD", "#E74C3C"];
 
-// Function to create a square element
-function createSquare() {
-    const square = document.createElement('div');
-    square.className = 'square';
-    return square;
-}
+for (let i = 0; i < squares; i++) {
+    const square = document.createElement("div");
+    square.classList.add("square");
 
-// Function to add event listener to the square element
-function addEventListenerToSquare(square) {
-    square.addEventListener('mouseover', () => {
-        square.style.backgroundColor = `rgb(${Math.random() * 256}, ${Math.random() * 256}, ${Math.random() * 256})`;
+    square.addEventListener("mouseover", () => {
+        const randomColor = colors[Math.floor(Math.random() * colors.length)];
+        square.style.backgroundColor = randomColor;
+
+        setTimeout(() => {
+            square.style.backgroundColor = "#ddd";
+        }, 1000);
     });
 
-    square.addEventListener('mouseout', () => {
-        square.style.backgroundColor = '#fff';
-    });
+    board.appendChild(square);
 }
-
-// Function to create and add squares to the container
-function createAndAddSquares() {
-    for (let i = 0; i < 800; i++) {
-        const square = createSquare();
-        addEventListenerToSquare(square);
-        container.appendChild(square);
-    }
-}
-
-// Create and add squares to the container
-createAndAddSquares();

@@ -1,20 +1,23 @@
-/*  your css code here. If applicable */
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #f0f0f0;
+    padding: 20px;
+}
+
 .container {
     display: grid;
-    grid-template-columns: repeat(20, 1fr);
-    grid-gap: 5px;
-    width: 800px;
-    margin: 40px auto;
+    grid-template-columns: repeat(40, 20px);
+    grid-template-rows: repeat(20, 20px);
+    gap: 2px;
+    margin: 20px auto;
+    max-width: 850px;
 }
 
 .square {
-    width: 40px;
-    height: 40px;
-    background-color: #fff;
-    transition: background-color 1s;
-}
-
-.square:hover {
-    background-color: rgb(255, 0, 0);
+    width: 20px;
+    height: 20px;
+    background-color: #ddd;
+    transition: background-color 1s ease-in-out;
 }
 
